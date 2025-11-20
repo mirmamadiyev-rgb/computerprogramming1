@@ -1,96 +1,79 @@
 #include <iostream>
-#include <iomanip>
-#include <ctime>
 using namespace std;
 
-
-//p1
+//problem1
 /*
-int findMax(int *arr, int size) {
-    int maxVal = *arr;
-    int *ptr = arr;
-    for (int i = 0; i < size; i++) {
-        if (*(ptr + i) > maxVal) {
-            maxVal = *(ptr + i);
+int main() {
+int arr[5]={10,20,30,40,50};
+int *ptr=arr;
+    for(int i=0;i<5;i++) {
+        cout<<*(ptr+i)<<endl;
+    }
+}
+*/
+
+
+
+
+//problem2
+/*
+int main() {
+    int arr[6]={2,4,6,8,10,12};
+    int *ptr=arr;
+    for(int i=0;i<6;i++) {
+        *(ptr+i)=*(ptr+i)*3;
+    }
+    for(int i=0;i<6;i++) {
+            cout<<*(ptr+i)<<endl;
         }
     }
-    return maxVal;
-}
-int main() {
-    int heights[] = {150, 165, 172, 160, 180};
-    int size = 5;
-    int maxHeight = findMax(heights, size);
-    cout <<maxHeight<< endl;
-    return 0;
-}          */
+    */
 
-
-
-//p2
+//problem3
 /*
 int main() {
-    int a, b;
-    cout << "Enter value for a: ";
-    cin >> a;
-    cout << "Enter value for b: ";
-    cin >> b;
-    int* ptrA = &a;
-    int* ptrB = &b;
-    cout << "Value of a using pointer: " << *ptrA << endl;
-    cout << "Value of b using pointer: " << *ptrB << endl;
-    return 0;
+    int arr[4]={5,10,15,20,};
+        int *ptr=arr;
+            cout<<ptr[2]<<endl;
+            cout<<*(ptr+2)<<endl;
+}*/
+
+
+
+//problem4
+/*
+int main() {
+    int arr[5]={1,2,3,4,5};
+    int *ptr=arr;
+    for(int i=4;i>=0;i--) {
+  cout<<*(ptr+i)<<endl;
+    }
 }
 */
 
 
-
-//p3
+//problem6
 /*
-int* findMax(int *arr, int size) {
-    int *maxPtr = arr;
-    for (int i = 1; i < size; i++) {
-        if (*(arr + i) > *maxPtr) {
-            maxPtr = arr + i;
+int main() {
+    int arr[4]={10,20,30,40};
+    int *ptr=arr;
+    for(int i=0;i<4;i++) {
+        cout<<"value : "<<*(ptr+i)<<" adress : "<<(ptr+1)<<endl;
+    }
+}       */
+
+//problem7
+/*
+int main() {
+    int arr[7]={11,4,7,18,5,2,9};
+    int *ptr=arr;
+    cout<<"even elements : "<<endl;
+    for(int i=0;i<6;i++) {
+        if (*(ptr +i)%2==0) {
+           cout<<*(ptr+i)<<" ";
         }
     }
-    return maxPtr;
-}
-int main() {
-    int size;
-    cout << "Enter number of data values: ";
-    cin >> size;
-    int *data = new int[size];
-    cout << "Enter the values:\n";
-    for (int i = 0; i < size; i++) {
-        cin >> *(data + i);
-    }
-    int *maxPointer = findMax(data, size);
-    cout << "Maximum value: " << *maxPointer << endl;
-    cout << "Pointer to max value (address): " << maxPointer << endl;
-    delete[] data;
-
-    return 0;
 }
 */
 
 
-
-//p7
-/*
-float calculateAverage(int *arr, int size) {
-    int sum = 0;
-    for (int i = 0; i < size; i++) {
-        sum += *(arr + i);
-    }
-    return (float)sum / size;
-}
-int main() {
-    int scores[] = {88, 76, 90, 85, 92};
-    int size = 5;
-    float average = calculateAverage(scores, size);
-    cout << fixed << setprecision(2);
-    cout << "Average Score: " << average << endl;
-    return 0;
-}
-
-*/

@@ -1,79 +1,125 @@
 #include <iostream>
 using namespace std;
 
-//problem1
+//problem9
 /*
 int main() {
-int arr[5]={10,20,30,40,50};
-int *ptr=arr;
+int a=7,b=14,c=21;
+int *ptrs[3]={&a,&b,&c};
+    for(int i=0;i<3;i++) {
+        cout<<ptrs[i]<<endl;
+    }
+}
+*/
+
+
+//problem10
+/*
+int main() {
+    int arr[5]={9,3,7,1,6};
+    int *p=arr;
     for(int i=0;i<5;i++) {
-        cout<<*(ptr+i)<<endl;
-    }
-}
-*/
-
-
-
-
-//problem2
-/*
-int main() {
-    int arr[6]={2,4,6,8,10,12};
-    int *ptr=arr;
-    for(int i=0;i<6;i++) {
-        *(ptr+i)=*(ptr+i)*3;
-    }
-    for(int i=0;i<6;i++) {
-            cout<<*(ptr+i)<<endl;
+        for(int j=0;j<5-i-1;j++) {
+            int *ptr1=p+j;
+            int *ptr2=p+j+1;
+            if(*ptr1>*ptr2) {
+                int temp=*ptr1;
+                *ptr1=*ptr2;
+                *ptr2=temp;
+            }
         }
     }
-    */
-
-//problem3
-/*
-int main() {
-    int arr[4]={5,10,15,20,};
-        int *ptr=arr;
-            cout<<ptr[2]<<endl;
-            cout<<*(ptr+2)<<endl;
-}*/
-
-
-
-//problem4
-/*
-int main() {
-    int arr[5]={1,2,3,4,5};
-    int *ptr=arr;
-    for(int i=4;i>=0;i--) {
-  cout<<*(ptr+i)<<endl;
+    for(int i=0;i<5;i++) {
+        cout;
     }
 }
 */
 
 
-//problem6
+//problem11
 /*
 int main() {
-    int arr[4]={10,20,30,40};
-    int *ptr=arr;
+const char* suit[4]={"hearts","diamonds","clubs","spades"};
     for(int i=0;i<4;i++) {
-        cout<<"value : "<<*(ptr+i)<<" adress : "<<(ptr+1)<<endl;
-    }
-}       */
-
-//problem7
-/*
-int main() {
-    int arr[7]={11,4,7,18,5,2,9};
-    int *ptr=arr;
-    cout<<"even elements : "<<endl;
-    for(int i=0;i<6;i++) {
-        if (*(ptr +i)%2==0) {
-           cout<<*(ptr+i)<<" ";
-        }
+        cout << suit[i] << endl;
     }
 }
 */
 
 
+
+//problem12
+/*
+int main() {
+    const char* days[3]={"mon","tue","wed"};
+    for(int i=0;i<3;i++) {
+        const char *p=*(days +i) ;
+        cout << *(p+1)<< endl;
+    }
+}
+*/
+
+//problem15
+/*
+void greet() {
+    printf("hello from greet()\n");
+}
+void bye() {
+    printf("goodbye from bye()\n");
+}
+
+int main() {
+    void (*fptr)();
+    fptr = greet;
+    fptr();
+    fptr=bye;
+    fptr();
+
+}
+*/
+
+
+
+
+//problem16
+/*
+int add(int a, int b) {
+    return a + b;
+}
+int multiply(int a, int b) {
+    return a * b;
+}
+int main() {
+    int (*fptr)(int,int);
+    int x=3,y=4;
+    fptr=add;
+    printf("adding  %d\n",fptr(x,y));
+fptr=multiply;
+    printf("multiplying  %d\n",fptr(x,y));
+}
+*/
+
+
+
+
+//problem15
+
+int main () {
+    int deck[4][13]={0};
+    deck[2][0]=1;
+    deck[3][1]=1;
+    const char *ranks[13]={
+        "ace","two","three","four","five","six","seven", "eight","nine","ten","jack","queen","king"
+    };
+    const char *suits[4]={
+      "club","diamond","heart","spade"
+    };
+    for (int suit=0;suit<4;suit++) {
+        for (int rank=0;rank<13;rank++) {
+            if (deck[suit][rank]==1) {
+                printf("%s of %s\n ",ranks[rank],suits[suit]);
+            }
+        }
+    }
+
+}
